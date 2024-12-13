@@ -36,7 +36,7 @@ public class SystemRestartUtils {
             .show();
     }
 
-    private static void restartSystemUI(Context context) {
+    public static void restartSystemUI(Context context) {
         ContentResolver resolver = context.getContentResolver();
         int currentValue = Settings.System.getInt(resolver, "system_ui_restart", 0);
         int newValue = (currentValue == 0) ? 1 : 0;
