@@ -42,5 +42,12 @@ public class SystemRestartUtils {
         int newValue = (currentValue == 0) ? 1 : 0;
         Settings.System.putInt(resolver, "system_ui_restart", newValue);
     }
+    
+    public static void reloadSystemUI(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+        int currentValue = Settings.System.getInt(resolver, "system_ui_reload", 0);
+        int newValue = (currentValue == 0) ? 1 : 0;
+        Settings.System.putInt(resolver, "system_ui_reload", newValue);
+    }
 }
 
